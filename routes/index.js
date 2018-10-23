@@ -19,7 +19,7 @@ router.post('/signedrequest', function(req, res) {
         instanceUrl = signedRequest.client.instanceUrl;
 
       var  query = "SELECT Id, FirstName, LastName, Phone, Email FROM Contact WHERE Id = '" + context.environment.record.Id + "'";
-        contactRequest = {
+      var  contactRequest = {
             url: instanceUrl + '/services/data/v29.0/query?q=' + query,
             headers: {
                 'Authorization': 'OAuth ' + oauthToken
@@ -35,8 +35,9 @@ router.post('/signedrequest', function(req, res) {
         var imgTag = qr.createImgTag(4);
         console.log("final");
         res.send(body);*/
-res.send(body);
-    });
+console.log(body);
+});
+res.send(signedRequest);
 
 
 });
