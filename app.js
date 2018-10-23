@@ -12,7 +12,9 @@ var app = express();
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-//app.set('views', __dirname + 'views');
+app.use(express.static(__dirname + '/views'));
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('views',__dirname + '/app/views');
 app.use(logger('dev'));
 app.use(bodyParser());
 app.use(express.json());
