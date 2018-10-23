@@ -33,7 +33,8 @@ router.post('/signedrequest', function(req, res) {
         qr.addData(text);
         qr.make();
         var imgTag = qr.createImgTag(4);
-        res.render('index', {context: context, imgTag: imgTag});
+        res.json(contact);
+      //  res.render('index', {context: context, imgTag: imgTag});
     });
 
 });
