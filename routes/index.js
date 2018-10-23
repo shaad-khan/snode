@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 router.post('/signedrequest', function(req, res) {
 
     // You could save this information in the user session if needed
+    console.log("here");
     var signedRequest = decode(req.body.signed_request, consumerSecret),
         context = signedRequest.context,
         oauthToken = signedRequest.client.oauthToken,
@@ -33,8 +34,9 @@ router.post('/signedrequest', function(req, res) {
         qr.addData(text);
         qr.make();
         var imgTag = qr.createImgTag(4);
+        console.log("final");
         res.send(body);
-      //  res.render('index', {context: context, imgTag: imgTag});
+
     });
 
 });
