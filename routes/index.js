@@ -14,12 +14,11 @@ router.post('/signedrequest', function(req, res) {
     // You could save this information in the user session if needed
     console.log("here");
     var signedRequest = decode(req.body.signed_request, consumerSecret);
-      /*  context = signedRequest.context,
-        oauthToken = signedRequest.client.oauthToken,
-        instanceUrl = signedRequest.client.instanceUrl,
+      var context = signedRequest.context;
+      var  oauthToken = signedRequest.client.oauthToken;
+        instanceUrl = signedRequest.client.instanceUrl;
 
-        query = "SELECT Id, FirstName, LastName, Phone, Email FROM Contact WHERE Id = '" + context.environment.record.Id + "'",
-
+      var  query = "SELECT Id, FirstName, LastName, Phone, Email FROM Contact WHERE Id = '" + context.environment.record.Id + "'";
         contactRequest = {
             url: instanceUrl + '/services/data/v29.0/query?q=' + query,
             headers: {
@@ -28,17 +27,17 @@ router.post('/signedrequest', function(req, res) {
         };
 
     request(contactRequest, function(err, response, body) {
-        var qr = qrcode.qrcode(4, 'L'),
+      /*  var qr = qrcode.qrcode(4, 'L'),
             contact = JSON.parse(body).records[0],
             text = 'MECARD:N:' + contact.LastName + ',' + contact.FirstName + ';TEL:' + contact.Phone + ';EMAIL:' + contact.Email + ';;';
         qr.addData(text);
         qr.make();
         var imgTag = qr.createImgTag(4);
         console.log("final");
-        res.send(body);
+        res.send(body);*/
+res.send(body);
+    });
 
-    });*/
-    res.send(signedRequest);
 
 });
 
