@@ -13,8 +13,8 @@ router.post('/signedrequest', function(req, res) {
 
     // You could save this information in the user session if needed
     console.log("here");
-    var signedRequest = decode(req.body.signed_request, consumerSecret),
-        context = signedRequest.context,
+    var signedRequest = decode(req.body.signed_request, consumerSecret);
+      /*  context = signedRequest.context,
         oauthToken = signedRequest.client.oauthToken,
         instanceUrl = signedRequest.client.instanceUrl,
 
@@ -37,7 +37,8 @@ router.post('/signedrequest', function(req, res) {
         console.log("final");
         res.send(body);
 
-    });
+    });*/
+    res.send(signedRequest);
 
 });
 
