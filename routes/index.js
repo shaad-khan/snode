@@ -34,7 +34,8 @@ router.post('/signedrequest', function(req, res) {
         qr.make();
         var imgTag = qr.createImgTag(4);
         console.log("final");
-        res.render('index', {context: context, imgTag: imgTag});
+       // res.render('index', {context: context, imgTag: imgTag});
+      res.send(body);
 
 });
 
