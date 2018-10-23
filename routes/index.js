@@ -3,7 +3,7 @@ var router = express.Router();
 var decode = require('salesforce-signed-request');
 var request = require('request');
 var consumerSecret = process.env.CONSUMER_SECRET;
-
+var qrcode = require('qrcode-npm');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.send("working");
