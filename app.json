@@ -2,6 +2,6 @@
     "name": "Canvas Demo",
     "description": "Salesforce Canvas Demo",
     "env": {
-        "CONSUMER_SECRET": ""
+        "CONSUMER_SECRET": "3885401267305713548"
     }
 }
