@@ -4,7 +4,7 @@ var decode = require('salesforce-signed-request');
   qrcode = require('qrcode-npm');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.send("working");
 });
 
 router.post('/signedrequest', function(req, res) {
